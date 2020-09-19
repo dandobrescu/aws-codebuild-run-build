@@ -16,7 +16,8 @@ async function run() {
   console.log("*****STARTING CODEBUILD*****");
   try {
     const build = await runBuild();
-    core.setOutput("aws-build-id", build.id);
+    core.setOutput("aws-build-name", build.id.split(":")[0]);
+    core.setOutput("aws-build-id", build.id.split(":")[1]);
 
     // Signal the outcome
     assert(
