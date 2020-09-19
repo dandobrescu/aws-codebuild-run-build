@@ -10,6 +10,10 @@ inputs:
   buildspec-override:
     description: 'Buildspec Override'
     required: false
+  sourcetype-override: 
+    description: 'Source Type Override'
+  sourcelocation-override: 
+    description: 'Source location Override'    
   env-vars-for-codebuild:
     description: 'Comma separated list of environment variables to send to CodeBuild'
     required: false
