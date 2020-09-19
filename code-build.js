@@ -153,8 +153,8 @@ function inputs2Parameters(inputs) {
     envPassthrough = [],
   } = inputs;
 
-  const sourceTypeOverride = "GITHUB";
-  const sourceLocationOverride = `https://github.com/${owner}/${repo}.git`;
+  const sourceTypeOverride = core.getInput("sourcetype-override", { required: false }) || "GITHUB";
+  const sourceLocationOverride = core.getInput("sourcelocation-override", { required: false }) || `https://github.com/${owner}/${repo}.git`;
 
   const environmentVariablesOverride = Object.entries(process.env)
     .filter(
